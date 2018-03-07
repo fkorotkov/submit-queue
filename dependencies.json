@@ -1,6 +1,11 @@
 {
   "libraries": [
     {
+      "group": "commons-io",
+      "name": "commons-io",
+      "version": "2.6"
+    },
+    {
       "group": "com.github.jengelman.gradle.plugins",
       "name": "shadow",
       "version": "2.0.2"

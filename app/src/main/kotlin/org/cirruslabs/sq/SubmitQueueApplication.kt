@@ -3,6 +3,7 @@ package org.cirruslabs.sq
 import io.dropwizard.Application
 import io.dropwizard.setup.Environment
 import org.cirruslabs.sq.config.SubmitQueueConfig
+import org.cirruslabs.sq.hooks.GithubHooksResource
 import org.eclipse.jetty.servlets.CrossOriginFilter
 import java.util.*
 import javax.servlet.DispatcherType
@@ -14,6 +15,9 @@ fun main(vararg args: String) {
 class SubmitQueueApplication : Application<SubmitQueueConfig>() {
   override fun run(configuration: SubmitQueueConfig, environment: Environment) {
     enableCORS(environment)
+    environment.jersey().apply {
+      register(GithubHooksResource())
+    }
   }
 
   private fun enableCORS(environment: Environment) {

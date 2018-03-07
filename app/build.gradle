@@ -32,6 +32,7 @@ runShadow {
 }
 
 dependencies {
+  implementation libraries['commons-io:commons-io']
   implementation libraries['io.dropwizard:dropwizard-core']
   implementation libraries['org.jetbrains.kotlin:kotlin-stdlib']
 }
