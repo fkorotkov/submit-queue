@@ -1,2 +1,3 @@
-# submit-queue
-GitHub Application to Introduce Submit Queue capabilities
+# Submit Queue for Github [![Build Status](https://api.cirrus-ci.com/github/cirruslabs/submit-queue.svg)](https://cirrus-ci.com/github/cirruslabs/submit-queue)
+
+WIP
