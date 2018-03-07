@@ -1,5 +1,37 @@
+apply plugin: 'application'
 apply plugin: 'kotlin'
+apply plugin: 'com.github.johnrengelman.shadow'
+
+buildscript {
+  dependencies {
+    classpath libraries['com.github.jengelman.gradle.plugins:shadow']
+  }
+}
+
+mainClassName = "org.cirruslabs.sq.SubmitQueueApplicationKt"
+
+jar {
+  manifest {
+    attributes(
+      'Main-Class': mainClassName
+    )
+  }
+}
+
+shadowJar {
+  baseName = 'cirrus-sq'
+  configurations = [
+    project.configurations.compileClasspath,
+    project.configurations.runtimeClasspath
+  ]
+}
+
+
+runShadow {
+  args 'server', "$projectDir/config/cirrus_config.yml"
+}
 
 dependencies {
+  implementation libraries['io.dropwizard:dropwizard-core']
   implementation libraries['org.jetbrains.kotlin:kotlin-stdlib']
 }
