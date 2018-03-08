@@ -33,6 +33,10 @@ runShadow {
 
 dependencies {
   implementation libraries['commons-io:commons-io']
+  implementation libraries['com.google.code.gson:gson']
   implementation libraries['io.dropwizard:dropwizard-core']
   implementation libraries['org.jetbrains.kotlin:kotlin-stdlib']
+
+  testImplementation libraries['junit:junit']
+  testImplementation libraries['org.jetbrains.kotlin:kotlin-test-junit']
 }
