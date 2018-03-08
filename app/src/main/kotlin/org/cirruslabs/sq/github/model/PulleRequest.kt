@@ -3,8 +3,8 @@ package org.cirruslabs.sq.github.model
 import java.util.*
 
 class PulleRequest {
-  var id: Int = 0
-  var number: Int = 0
+  var id: Long = 0
+  var number: Long = 0
   var state: String = ""
   var body: String = ""
   var created_at: Date = Date()

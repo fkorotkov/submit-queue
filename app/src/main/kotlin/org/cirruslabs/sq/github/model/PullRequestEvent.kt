@@ -9,7 +9,7 @@ class PullRequestEvent {
   }
 
   var action: String = ""
-  var number: Int = 0
+  var number: Long = 0
   var pull_request: PulleRequest = PulleRequest()
   var label: Label? = null
   var repository: Repository = Repository()
