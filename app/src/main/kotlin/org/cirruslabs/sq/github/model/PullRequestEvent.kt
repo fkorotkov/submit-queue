@@ -13,4 +13,5 @@ class PullRequestEvent {
   var pull_request: PulleRequest = PulleRequest()
   var label: Label? = null
   var repository: Repository = Repository()
+  var installation: Installation = Installation()
 }

@@ -12,4 +12,5 @@ class IssueCommentEvent {
   var issue: Issue = Issue()
   var comment: Comment = Comment()
   var repository: Repository = Repository()
+  var installation: Installation = Installation()
 }

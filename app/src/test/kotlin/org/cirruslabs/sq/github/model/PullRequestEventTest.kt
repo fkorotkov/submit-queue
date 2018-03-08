@@ -20,5 +20,7 @@ class PullRequestEventTest {
     assertEquals("queued", event.label?.name)
 
     assertEquals("cirruslabs/sandbox", event.repository.full_name)
+
+    assertEquals(102236, event.installation.id)
   }
 }

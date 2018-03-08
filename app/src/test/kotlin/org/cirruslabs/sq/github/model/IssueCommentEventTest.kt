@@ -22,5 +22,7 @@ class IssueCommentEventTest {
     assertEquals(124271577, event.repository.id)
     assertEquals("cirruslabs/sandbox", event.repository.full_name)
     assertEquals("master", event.repository.default_branch)
+
+    assertEquals(102236, event.installation.id)
   }
 }
