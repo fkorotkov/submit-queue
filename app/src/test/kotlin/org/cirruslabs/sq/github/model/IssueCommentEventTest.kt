@@ -1,7 +1,7 @@
 package org.cirruslabs.sq.github.model
 
 import com.google.common.io.Resources
-import org.junit.Assert.*
+import org.junit.Assert.assertEquals
 import org.junit.Test
 import java.nio.charset.Charset
 
