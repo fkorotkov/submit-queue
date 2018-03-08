@@ -36,9 +36,19 @@ dependencies {
   implementation libraries['commons-io:commons-io']
   implementation libraries['com.google.code.gson:gson']
   implementation libraries['io.dropwizard:dropwizard-core']
+  implementation libraries['org.apache.httpcomponents:httpclient']
   implementation libraries['org.bouncycastle:bcprov-jdk15on']
   implementation libraries['org.jetbrains.kotlin:kotlin-stdlib']
+  implementation libraries['org.jetbrains.kotlinx:kotlinx-coroutines-core']
+  implementation libraries['org.jetbrains.kotlinx:kotlinx-coroutines-core-common']
+  implementation libraries['org.jetbrains.kotlinx:kotlinx-coroutines-jdk8']
 
   testImplementation libraries['junit:junit']
   testImplementation libraries['org.jetbrains.kotlin:kotlin-test-junit']
+}
+
+kotlin {
+  experimental {
+    coroutines "enable"
+  }
 }
