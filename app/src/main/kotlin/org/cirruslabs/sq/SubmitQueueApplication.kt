@@ -3,6 +3,9 @@ package org.cirruslabs.sq
 import io.dropwizard.Application
 import io.dropwizard.setup.Environment
 import org.cirruslabs.sq.config.SubmitQueueConfig
+import org.cirruslabs.sq.github.api.GitHubApi
+import org.cirruslabs.sq.github.api.GithubSecrets
+import org.cirruslabs.sq.github.api.impl.GitHubApiImpl
 import org.cirruslabs.sq.hooks.GithubHooksResource
 import org.eclipse.jetty.servlets.CrossOriginFilter
 import java.util.*
@@ -15,8 +18,14 @@ fun main(vararg args: String) {
 class SubmitQueueApplication : Application<SubmitQueueConfig>() {
   override fun run(configuration: SubmitQueueConfig, environment: Environment) {
     enableCORS(environment)
+
+    val gitHubApi = GitHubApiImpl(
+      System.getenv("GITHUB_CLIENT_ID_FILE"),
+      GithubSecrets.initialize()
+    )
+
     environment.jersey().apply {
-      register(GithubHooksResource())
+      register(GithubHooksResource(gitHubApi))
     }
   }
 
